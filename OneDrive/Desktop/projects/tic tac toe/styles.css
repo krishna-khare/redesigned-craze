@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('tac.png'); /* Replace 'background-image.jpg' with your desired image file */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color:rgba(122, 10, 219, 0.758); /* Optional: Add a semi-transparent background color for the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    position: relative; /* Add this line to position the container */
+    z-index: 1;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell-clicked {
+    animation: cellClickAnimation 0.3s;
+}
+
+@keyframes cellClickAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.win-cell {
+    animation: winHighlightAnimation 1s infinite;
+}
+
+@keyframes winHighlightAnimation {
+    0%, 100% { background-color: #27ae60; }
+    50% { background-color: #2ecc71; }
+}
+
+.message {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: x-large;
+    color: aqua;
+}
+
+.restart-btn {
+    padding: 10px 20px;
+    background-color: #118cde;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* styles.css */
+@keyframes firecrackerAnimation {
+    0% { transform: scale(1); background-color: #fff23a; }
+    50% { transform: scale(1.5); background-color: #ebc724; }
+    100% { transform: scale(1); background-color: #ef951e; }
+}
+
+.firecracker {
+    width: 150px;
+    height: 150px;
+    background-color: #94f01b;
+    position: absolute;
+    bottom: 40%;
+    left: 30%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: firecrackerAnimation 1s infinite;
+}
+
+
+
